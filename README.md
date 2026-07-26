@@ -4,7 +4,7 @@ A lightweight local file search application built with **Python** and **Bottle**
 
 Omnis scans your local files, builds an in-memory index, and lets you search for files by **filename** through a clean web interface.
 
-> **This project was built for learning and practice purposes** to understand filesystem traversal, indexing, search algorithms, and backend web development using Python.
+> **This project was built for learning and practice purposes**
 
 ---
 

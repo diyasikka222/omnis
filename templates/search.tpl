@@ -1,60 +1,125 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
-<title>Results</title>
+    <meta charset="UTF-8">
 
-<link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Omnis</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="/static/style.css">
 
 </head>
 
-<body>
+<body class="results-page">
 
-<h1>Local File Search</h1>
+<div class="results-container">
 
-<h2>Search Results</h2>
+    <header class="results-header">
 
-<p>You searched for:</p>
+        <a href="/" class="brand">
 
-<h3>{{query}}</h3>
+            Omnis
 
-% if results:
+        </a>
 
-<ul>
+        <form
+            action="/search"
+            class="results-search">
 
-% for file in results:
+            <input
+                type="text"
+                name="query"
+                value="{{query}}"
+                placeholder="Search files..."
+                autofocus>
 
-<li>
+            <button>
 
-{{file.name}}
+                Search
 
-<a href="/open?path={{file}}">
+            </button>
 
-Open
+        </form>
 
-</a>
+    </header>
 
-<br>
+    <div class="results-info">
 
-<small>{{file}}</small>
+        <h2>
 
-</li>
+            {{len(results)}} Results
 
-% end
+        </h2>
 
-</ul>
+        <p>
 
-% else:
+            Showing results for
+            <strong>"{{query}}"</strong>
 
-<p>No files found.</p>
+        </p>
 
-% end
+    </div>
 
-<br>
+    % if results:
 
-<a href="/">Back</a>
+        % for file in results:
+
+        <div class="result-card">
+
+            <div>
+
+                <h3>
+
+                    {{file.name}}
+
+                </h3>
+
+                <p class="file-path">
+
+                    {{file}}
+
+                </p>
+
+            </div>
+
+            <a
+                class="open-button"
+                href="/open?path={{file}}">
+
+                Open
+
+            </a>
+
+        </div>
+
+        % end
+
+    % else:
+
+        <div class="empty">
+
+            No files found.
+
+        </div>
+
+    % end
+
+</div>
 
 </body>
 

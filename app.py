@@ -11,11 +11,7 @@ TEMPLATE_PATH.append("/Users/diyasikka/DEVELOPMENT/local-file-search/templates")
 
 @route("/")
 def home():
-    return template(
-        "index",
-        title="Local File Search",
-        message="Welcome to my search engine!"
-    )
+    return template("index")
 
 @route("/search")
 def search():

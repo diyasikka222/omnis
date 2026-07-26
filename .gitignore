@@ -24,16 +24,17 @@
 # Compiled Python files
 __pycache__/
 *.py[cod]
+*$py.class
 
-# Python extension modules
+# Compiled extension modules
 *.so
 
 # ============================================
 # Virtual Environments
 # ============================================
 
-venv/
 .venv/
+venv/
 env/
 ENV/
 
@@ -45,7 +46,7 @@ ENV/
 .env.*
 
 # ============================================
-# IDEs
+# IDEs & Editors
 # ============================================
 
 # VS Code
@@ -55,10 +56,13 @@ ENV/
 .idea/
 
 # ============================================
-# Testing
+# Python Tooling
 # ============================================
 
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
 .coverage
 htmlcov/
 
@@ -77,14 +81,7 @@ dist/
 *.log
 
 # ============================================
-# Database
-# ============================================
-
-*.sqlite
-*.sqlite3
-
-# ============================================
-# Temporary files
+# Temporary Files
 # ============================================
 
 *.tmp
